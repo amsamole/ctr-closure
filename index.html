@@ -10,90 +10,129 @@
   <link rel="apple-touch-icon" href="assets/logo.png">
 
   <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --text: #e5e7eb;
+      --muted: #cbd5e1;
+      --accent: #60a5fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f7f9fc;
-      color: #333;
+      height: 100%;
       margin: 0;
-      padding: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 20% 0%, #1f2937 0%, var(--bg) 60%);
+      color: var(--text);
+      line-height: 1.6;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      padding: 24px;
     }
+
     .card {
-      background: #fff;
-      padding: 2rem;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 760px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      padding: 28px;
+      backdrop-filter: blur(6px);
       text-align: center;
     }
+
     .card img {
       max-width: 220px;
-      margin-bottom: 1rem;
+      margin-bottom: 8px;
     }
+
     h1 {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: #003366;
+      margin: 0 0 10px;
+      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      font-weight: 750;
+      letter-spacing: -0.01em;
     }
-    p {
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
+
     .pill {
       display: inline-block;
-      background: #e6f0ff;
-      color: #003366;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
       font-size: 0.9rem;
-      margin-bottom: 1.25rem;
+      padding: 6px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      color: var(--muted);
+      margin-bottom: 12px;
     }
-    .divider {
-      border-top: 1px solid #ddd;
-      margin: 1.5rem 0;
+
+    p {
+      margin: 0 0 14px;
     }
+
     .emph {
+      color: #fff;
       font-weight: 600;
     }
+
     .note {
-      font-size: 0.9rem;
-      color: #555;
-      text-align: left;
+      font-size: 0.95rem;
+      border-left: 3px solid rgba(255, 255, 255, 0.18);
+      padding-left: 12px;
+      color: var(--muted);
     }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(96, 165, 250, 0.5);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     .cta {
       display: inline-block;
-      margin-top: 1.25rem;
-      padding: 0.75rem 1.25rem;
-      background: #003366;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background 0.2s ease-in-out;
+      margin-top: 8px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.03);
     }
+
     .cta:hover {
-      background: #0055aa;
+      background: rgba(255, 255, 255, 0.06);
     }
-    footer {
-      font-size: 0.8rem;
-      color: #777;
-      margin-top: 2rem;
+
+    .divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      margin: 16px 0;
     }
   </style>
 </head>
 <body>
   <main class="card" role="main">
-    <!-- Page Logo -->
-    <img src="assets/logo.png" alt="Canadian Tax Refunds logo">
-
     <div class="pill" aria-hidden="true">Official Announcement</div>
     <h1>Notice of Closure – Canadian Tax Refunds</h1>
     <p>As of <span class="emph">August 15, 2025</span>, Canadian Tax Refunds has permanently ceased operations. We are proud to have assisted so many Canadians across the country in reclaiming their tax refunds over the years.</p>
     <div class="divider"></div>
-    <p><span class="emph">Client Information & Privacy:</span> Your personal information will continue to be handled in accordance with guidelines from the <span class="emph">Canada Revenue Agency (CRA)</span> and all applicable <span class="emph">federal and provincial</span> privacy and data-protection requirements. If you have a question about your information, retention, or records access, please contact us directly.</p>
+    <p><span class="emph">Client Information & Privacy:</span> Your personal information will continue to be handled in accordance with guidelines from the <span class="emph">Canada Revenue Agency (CRA)</span> and applicable <span class="emph">federal and provincial</span> privacy and data-protection requirements. If you have a question about your information, retention, or records access, please contact us directly.</p>
     <p class="note">Canadian Tax Refunds is an independent business and is <span class="emph">not affiliated with the CRA</span> or any government agency.</p>
     <a class="cta" href="mailto:info@canadiantaxrefunds.ca">Contact us regarding privacy or records</a>
     <footer>
